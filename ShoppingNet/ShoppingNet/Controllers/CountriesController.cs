@@ -20,12 +20,14 @@ namespace ShoppingNet.Controllers
         }
 
         // GET: Countries
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Countries.ToListAsync());
         }
 
         // GET: Countries/Details/5
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,6 +46,7 @@ namespace ShoppingNet.Controllers
         }
 
         // GET: Countries/Create
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -54,7 +57,7 @@ namespace ShoppingNet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Country country)
+        public async Task<IActionResult> Create(Country country)
         {
             if (ModelState.IsValid)
             {
