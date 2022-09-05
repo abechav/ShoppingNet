@@ -1,4 +1,4 @@
-﻿@model ShoppingNet.Data.Entities.Country
+﻿@model ShoppingNet.Data.Entities.Category
 
 @{
     ViewData["Title"] = "Edit";
@@ -14,7 +14,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
 
-            <partial name="_Country" />
+            <partial name="_Category" />
             <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-outline-primary" />
             </div>
